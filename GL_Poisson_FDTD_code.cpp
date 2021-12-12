@@ -135,7 +135,7 @@ j_tr_dim = ((1.0e-9)+0.877)*20.0*pow(10, 9);
 j_tr = j_tr_dim / j_0; 				//transport current dimensionless   *8.0
 j_S = j_tr_dim*L*50.0*pow(10,-9);
  
- // РїР°СЂР°РјРµС‚СЂС‹ СЂР°СЃС‡РµС‚Р°
+ // Ð Ñ—Ð Â°Ð¡Ð‚Ð Â°Ð Ñ˜Ð ÂµÐ¡â€šÐ¡Ð‚Ð¡â€¹ Ð¡Ð‚Ð Â°Ð¡ÐƒÐ¡â€¡Ð ÂµÐ¡â€šÐ Â°
  
 out << "Xi(m) = " << xi << " Lambda(m) = " << lambda << " Hc = " << Hc << " B_0 = " << B_0 <<endl;
 out << "Sigma = " << sigma_dim << " B(T) = " << B_dim << " j_tr(A/m^2) = " << j_tr_dim  << " sigma_nondim = " << sigma << " j_tr_nondim " << j_tr << endl;
@@ -780,7 +780,7 @@ out.close();
 			for (int i = 0; i < Ns; i++)
 				for (int j = 0; j < Ny+1; j++)
 				{
-					j_sc_s[i][j] = (1. / (kappa_rand[i][j]*hs))*(ReUs[i][j] * (psi2[i+1][j] * psi1[i][j] - psi1[i+1][j] * psi2[i][j]) - ImUs[i][j] * (psi1[i+1][j] * psi1[i][j] + psi2[i+1][j] * psi2[i][j]));	// ������ ��������� *(lambda/R) ��� ������ � �����������		
+					j_sc_s[i][j] = (1. / (kappa_rand[i][j]*hs))*(ReUs[i][j] * (psi2[i+1][j] * psi1[i][j] - psi1[i+1][j] * psi2[i][j]) - ImUs[i][j] * (psi1[i+1][j] * psi1[i][j] + psi2[i+1][j] * psi2[i][j]));	// îòêóäà ìíîæèòåëü *(lambda/R) ïðè âûâîäå ó Ïîñåíèöêîãî		
 					// F_y[i][j] = (-1.)*(j_sc_s[i][j]*lambda/R + (C_force/psi_0_square)*(sigma/kappa)*(fi[i+1][j]-fi[i][j])/hs)*B_ind*sin(s[i]*lambda/R);
 					j_norm_s[i][j] = (-1.)*sigma*(fi[i+1][j]-fi[i][j])/(1.0*hs);
 					j_tot_s[i][j] = j_sc_s[i][j] + j_norm_s[i][j];	
